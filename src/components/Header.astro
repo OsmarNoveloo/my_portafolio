@@ -1,0 +1,70 @@
+---
+import { social } from "../data/social";
+
+const links = [
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contacto", label: "Contacto" },
+];
+---
+
+<header class="fixed top-0 inset-x-0 z-50 border-b border-border bg-bg/80 backdrop-blur">
+  <div class="mx-auto max-w-5xl px-6 flex items-center justify-between h-16">
+    <a href="#top" class="font-display font-semibold text-lg tracking-tight text-text">
+      OP<span class="text-accent-bright">.</span>
+    </a>
+
+    <nav class="hidden sm:flex items-center gap-8 font-mono text-sm text-text-muted">
+      {links.map((link) => (
+        <a href={link.href} class="hover:text-text transition-colors">
+          {link.label}
+        </a>
+      ))}
+    </nav>
+
+    <a
+      href={`mailto:${social.email}`}
+      class="hidden sm:inline-flex items-center gap-2 rounded-md border border-border px-3 py-1.5 text-sm text-text hover:border-accent hover:text-accent-bright transition-colors"
+    >
+      <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 animate-pulse-dot"></span>
+      Disponible
+    </a>
+
+    <button
+      id="menu-toggle"
+      class="sm:hidden text-text p-2"
+      aria-label="Abrir menú"
+      aria-expanded="false"
+    >
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 6h18M3 12h18M3 18h18" />
+      </svg>
+    </button>
+  </div>
+
+  <nav id="mobile-menu" class="hidden sm:hidden border-t border-border px-6 py-4 flex flex-col gap-4 font-mono text-sm">
+    {links.map((link) => (
+      <a href={link.href} class="text-text-muted hover:text-text transition-colors">
+        {link.label}
+      </a>
+    ))}
+    <a href={`mailto:${social.email}`} class="text-accent-bright">
+      {social.email}
+    </a>
+  </nav>
+</header>
+
+<script>
+  const toggle = document.getElementById("menu-toggle");
+  const menu = document.getElementById("mobile-menu");
+
+  toggle?.addEventListener("click", () => {
+    const isHidden = menu?.classList.contains("hidden");
+    menu?.classList.toggle("hidden");
+    toggle.setAttribute("aria-expanded", String(isHidden));
+  });
+
+  menu?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => menu.classList.add("hidden"));
+  });
+</script>

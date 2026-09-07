@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Hero from "../components/Hero.astro";
+import Projects from "../components/Projects.astro";
+import Stack from "../components/Stack.astro";
+import Experience from "../components/Experience.astro";
+import Contact from "../components/Contact.astro";
+import Footer from "../components/Footer.astro";
+import { experience } from "../data/experience";
+
+const pad = (n: number) => String(n).padStart(2, "0");
+const hasExperience = experience.length > 0;
+const stackIndex = 2;
+const experienceIndex = stackIndex + 1;
+const contactIndex = hasExperience ? experienceIndex + 1 : experienceIndex;
+---
+
+<Layout>
+  <Header />
+  <main class="relative z-10">
+    <Hero />
+    <Projects index={pad(1)} />
+    <Stack index={pad(stackIndex)} />
+    <Experience index={pad(experienceIndex)} />
+    <Contact index={pad(contactIndex)} />
+  </main>
+  <Footer />
+</Layout>

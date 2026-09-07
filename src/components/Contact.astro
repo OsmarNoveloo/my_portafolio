@@ -1,0 +1,49 @@
+---
+import { social } from "../data/social";
+
+interface Props {
+  index: string;
+}
+
+const { index } = Astro.props;
+---
+
+<section id="contacto" class="relative py-24 border-t border-border">
+  <div class="mx-auto max-w-5xl px-6">
+    <p class="font-mono text-sm text-accent-bright mb-4">{index} // contacto</p>
+
+    <h2 class="font-display font-semibold text-3xl sm:text-4xl text-text max-w-lg text-balance">
+      ¿Tienes un proyecto o una vacante en mente?
+    </h2>
+
+    <p class="mt-4 max-w-lg text-text-muted leading-relaxed">
+      Estoy buscando una posición estable como desarrollador Full Stack, presencial o híbrida en
+      Mérida, o remota. Escríbeme y platicamos.
+    </p>
+
+    <div class="mt-8 flex flex-wrap gap-4">
+      <a
+        href={`mailto:${social.email}`}
+        class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-bright transition-colors"
+      >
+        {social.email}
+      </a>
+      <a
+        href={social.linkedin}
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text hover:border-accent hover:text-accent-bright transition-colors"
+      >
+        LinkedIn
+      </a>
+      <a
+        href={social.github}
+        target="_blank"
+        rel="noreferrer"
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text hover:border-accent hover:text-accent-bright transition-colors"
+      >
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>

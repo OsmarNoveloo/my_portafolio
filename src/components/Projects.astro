@@ -1,0 +1,79 @@
+---
+import { projects } from "../data/projects";
+
+interface Props {
+  index: string;
+}
+
+const { index } = Astro.props;
+---
+
+<section id="proyectos" class="relative py-20 border-t border-border">
+  <div class="mx-auto max-w-5xl px-6">
+    <div class="flex items-baseline gap-3 mb-12">
+      <span class="font-mono text-sm text-accent-bright">{index}</span>
+      <h2 class="font-display font-semibold text-2xl sm:text-3xl text-text">
+        Proyectos
+      </h2>
+    </div>
+
+    <div class="flex flex-col">
+      {projects.map((project) => (
+        <article class="group grid sm:grid-cols-[3rem_1fr] gap-x-6 gap-y-3 py-8 border-b border-border transition-colors hover:border-border-hover">
+          <span class="font-mono text-sm text-text-dim group-hover:text-accent-bright transition-colors">
+            {project.index}
+          </span>
+
+          <div>
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+              <h3 class="font-display font-semibold text-xl text-text group-hover:text-accent-bright transition-colors">
+                {project.title}
+              </h3>
+            </div>
+
+            <p class="mt-3 max-w-2xl text-text-muted leading-relaxed">
+              {project.description}
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-2">
+              {project.tech.map((t) => (
+                <span class="font-mono text-xs text-text-dim border border-border rounded px-2 py-1">
+                  {t}
+                </span>
+              ))}
+            </div>
+
+            <div class="mt-4 flex items-center gap-5 font-mono text-sm">
+              {project.demo && (
+                <a
+                  href={project.demo}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-1.5 text-text-muted hover:text-accent-bright transition-colors"
+                >
+                  Ver demo
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              )}
+              {project.code && (
+                <a
+                  href={project.code}
+                  target="_blank"
+                  rel="noreferrer"
+                  class="inline-flex items-center gap-1.5 text-text-muted hover:text-accent-bright transition-colors"
+                >
+                  Código
+                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M7 17 17 7M7 7h10v10" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

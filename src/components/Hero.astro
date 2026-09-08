@@ -4,21 +4,21 @@ import { social } from "../data/social";
 
 <section id="top" class="relative pt-40 pb-24 sm:pt-48 sm:pb-32">
   <div class="mx-auto max-w-5xl px-6">
-    <p class="font-mono text-sm text-accent-bright mb-6">
+    <p data-reveal style="--reveal-delay: 0ms" class="font-mono text-sm text-accent-bright mb-6">
       // {social.role.toLowerCase()}
     </p>
 
-    <h1 class="font-display font-semibold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-balance text-text">
+    <h1 data-reveal style="--reveal-delay: 90ms" class="font-display font-semibold text-4xl sm:text-6xl leading-[1.05] tracking-tight text-balance text-text">
       {social.name}
     </h1>
 
-    <p class="mt-6 max-w-xl text-lg text-text-muted leading-relaxed">
+    <p data-reveal style="--reveal-delay: 180ms" class="mt-6 max-w-xl text-lg text-text-muted leading-relaxed">
       Resuelvo problemas técnicos de punta a punta, tanto en frontend como en backend.
       Construyo sistemas de punto de venta, integraciones con inteligencia artificial y
       aplicaciones web completas, y sigo aprendiendo constantemente en el camino.
     </p>
 
-    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-text-dim">
+    <div data-reveal style="--reveal-delay: 260ms" class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-2 font-mono text-sm text-text-dim">
       <span class="inline-flex items-center gap-2">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
           <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z" />
@@ -32,16 +32,16 @@ import { social } from "../data/social";
       </span>
     </div>
 
-    <div class="mt-10 flex flex-wrap items-center gap-4">
+    <div data-reveal style="--reveal-delay: 340ms" class="mt-10 flex flex-wrap items-center gap-4">
       <a
         href="#proyectos"
-        class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-bright transition-colors"
+        class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-accent-bright hover:-translate-y-0.5 active:translate-y-0"
       >
         Ver proyectos
       </a>
       <a
         href={`mailto:${social.email}`}
-        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text hover:border-accent hover:text-accent-bright transition-colors"
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text transition-all hover:border-accent hover:text-accent-bright hover:-translate-y-0.5 active:translate-y-0"
       >
         Contáctame
       </a>

@@ -11,7 +11,7 @@ const { index } = Astro.props;
 {experience.length > 0 && (
   <section id="experiencia" class="relative py-20 border-t border-border">
     <div class="mx-auto max-w-5xl px-6">
-      <div class="flex items-baseline gap-3 mb-12">
+      <div data-reveal class="flex items-baseline gap-3 mb-12">
         <span class="font-mono text-sm text-accent-bright">{index}</span>
         <h2 class="font-display font-semibold text-2xl sm:text-3xl text-text">
           Experiencia
@@ -19,8 +19,8 @@ const { index } = Astro.props;
       </div>
 
       <div class="flex flex-col gap-10">
-        {experience.map((job) => (
-          <div class="grid sm:grid-cols-[10rem_1fr] gap-x-6 gap-y-2">
+        {experience.map((job, i) => (
+          <div data-reveal style={`--reveal-delay: ${i * 90}ms`} class="grid sm:grid-cols-[10rem_1fr] gap-x-6 gap-y-2">
             <span class="font-mono text-sm text-text-dim">
               {job.period}
             </span>

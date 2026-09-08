@@ -10,7 +10,7 @@ const { index } = Astro.props;
 
 <section id="stack" class="relative py-20 border-t border-border">
   <div class="mx-auto max-w-5xl px-6">
-    <div class="flex items-baseline gap-3 mb-12">
+    <div data-reveal class="flex items-baseline gap-3 mb-12">
       <span class="font-mono text-sm text-accent-bright">{index}</span>
       <h2 class="font-display font-semibold text-2xl sm:text-3xl text-text">
         Stack
@@ -18,14 +18,14 @@ const { index } = Astro.props;
     </div>
 
     <div class="grid sm:grid-cols-2 gap-x-10 gap-y-10">
-      {stack.map((group) => (
-        <div>
+      {stack.map((group, i) => (
+        <div data-reveal style={`--reveal-delay: ${i * 90}ms`}>
           <h3 class="font-mono text-xs uppercase tracking-widest text-text-dim mb-4">
             {group.category}
           </h3>
           <div class="flex flex-wrap gap-2">
             {group.items.map((item) => (
-              <span class="rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm text-text-muted">
+              <span class="rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm text-text-muted transition-all hover:border-border-hover hover:text-text hover:-translate-y-0.5">
                 {item}
               </span>
             ))}

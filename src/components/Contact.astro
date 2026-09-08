@@ -10,21 +10,21 @@ const { index } = Astro.props;
 
 <section id="contacto" class="relative py-24 border-t border-border">
   <div class="mx-auto max-w-5xl px-6">
-    <p class="font-mono text-sm text-accent-bright mb-4">{index} // contacto</p>
+    <p data-reveal class="font-mono text-sm text-accent-bright mb-4">{index} // contacto</p>
 
-    <h2 class="font-display font-semibold text-3xl sm:text-4xl text-text max-w-lg text-balance">
+    <h2 data-reveal style="--reveal-delay: 80ms" class="font-display font-semibold text-3xl sm:text-4xl text-text max-w-lg text-balance">
       ¿Tienes un proyecto o una vacante en mente?
     </h2>
 
-    <p class="mt-4 max-w-lg text-text-muted leading-relaxed">
+    <p data-reveal style="--reveal-delay: 160ms" class="mt-4 max-w-lg text-text-muted leading-relaxed">
       Estoy buscando una posición estable como desarrollador Full Stack, presencial o híbrida en
       Mérida, o remota. Escríbeme y platicamos.
     </p>
 
-    <div class="mt-8 flex flex-wrap gap-4">
+    <div data-reveal style="--reveal-delay: 240ms" class="mt-8 flex flex-wrap gap-4">
       <a
         href={`mailto:${social.email}`}
-        class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white hover:bg-accent-bright transition-colors"
+        class="rounded-md bg-accent px-5 py-2.5 text-sm font-medium text-white transition-all hover:bg-accent-bright hover:-translate-y-0.5 active:translate-y-0"
       >
         {social.email}
       </a>
@@ -32,7 +32,7 @@ const { index } = Astro.props;
         href={social.linkedin}
         target="_blank"
         rel="noreferrer"
-        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text hover:border-accent hover:text-accent-bright transition-colors"
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text transition-all hover:border-accent hover:text-accent-bright hover:-translate-y-0.5 active:translate-y-0"
       >
         LinkedIn
       </a>
@@ -40,7 +40,7 @@ const { index } = Astro.props;
         href={social.github}
         target="_blank"
         rel="noreferrer"
-        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text hover:border-accent hover:text-accent-bright transition-colors"
+        class="rounded-md border border-border px-5 py-2.5 text-sm font-medium text-text transition-all hover:border-accent hover:text-accent-bright hover:-translate-y-0.5 active:translate-y-0"
       >
         GitHub
       </a>

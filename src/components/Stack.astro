@@ -1,5 +1,6 @@
 ---
 import { stack } from "../data/stack";
+import { techIcons } from "../data/techIcons";
 
 interface Props {
   index: string;
@@ -25,8 +26,15 @@ const { index } = Astro.props;
           </h3>
           <div class="flex flex-wrap gap-2">
             {group.items.map((item) => (
-              <span class="rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm text-text-muted transition-all hover:border-border-hover hover:text-text hover:-translate-y-0.5">
-                {item}
+              <span class="flex items-center gap-2 rounded-md border border-border bg-bg-elevated px-3 py-1.5 text-sm text-text-muted transition-all hover:border-border-hover hover:text-text hover:-translate-y-0.5">
+                <svg
+                  viewBox="0 0 24 24"
+                  class="h-3.5 w-3.5 shrink-0 fill-current opacity-80"
+                  aria-hidden="true"
+                >
+                  <path d={techIcons[item.icon]} />
+                </svg>
+                {item.name}
               </span>
             ))}
           </div>

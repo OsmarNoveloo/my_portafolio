@@ -1,18 +1,37 @@
-export const stack: { category: string; items: string[] }[] = [
+export const stack: { category: string; items: { name: string; icon: string }[] }[] = [
   {
     category: "Frontend",
-    items: ["React", "Astro", "Knockout.js", "Oracle JET", "TypeScript", "JavaScript"],
+    items: [
+      { name: "React", icon: "react" },
+      { name: "Astro", icon: "astro" },
+      { name: "Knockout.js", icon: "code" },
+      { name: "Oracle JET", icon: "code" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "JavaScript", icon: "javascript" },
+    ],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "PL/SQL"],
+    items: [
+      { name: "Node.js", icon: "nodedotjs" },
+      { name: "Express", icon: "express" },
+      { name: "PL/SQL", icon: "database" },
+    ],
   },
   {
     category: "Bases de datos",
-    items: ["PostgreSQL", "Supabase", "Oracle Database"],
+    items: [
+      { name: "PostgreSQL", icon: "postgresql" },
+      { name: "Supabase", icon: "supabase" },
+      { name: "Oracle Database", icon: "database" },
+    ],
   },
   {
     category: "Herramientas",
-    items: ["Git", "GitHub", "Vercel"],
+    items: [
+      { name: "Git", icon: "git" },
+      { name: "GitHub", icon: "github" },
+      { name: "Vercel", icon: "vercel" },
+    ],
   },
 ];

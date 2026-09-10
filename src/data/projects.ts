@@ -1,3 +1,7 @@
+import type { ImageMetadata } from "astro";
+import posTiendaImg from "../assets/POS_tienda.png";
+import portafolioImg from "../assets/portafolio.png";
+
 export type Project = {
   index: string;
   title: string;
@@ -6,6 +10,7 @@ export type Project = {
   demo?: string;
   code?: string;
   featured?: boolean;
+  image?: ImageMetadata;
 };
 
 export const projects: Project[] = [
@@ -37,6 +42,7 @@ export const projects: Project[] = [
     demo: "https://tienda-el-campo.vercel.app",
     code: "https://github.com/OsmarNoveloo/tienda-el-campo",
     featured: true,
+    image: posTiendaImg,
   },
   {
     index: "04",
@@ -56,5 +62,6 @@ export const projects: Project[] = [
     demo: "https://onsistemas.vercel.app",
     code: "https://github.com/OsmarNoveloo/ONsistemas",
     featured: true,
+    image: portafolioImg,
   },
 ];

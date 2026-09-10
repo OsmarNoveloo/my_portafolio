@@ -1,14 +1,22 @@
 ---
 import { social } from "../data/social";
+import { experience } from "../data/experience";
 
 const links = [
   { href: "#proyectos", label: "Proyectos" },
   { href: "#stack", label: "Stack" },
+  ...(experience.length > 0 ? [{ href: "#experiencia", label: "Experiencia" }] : []),
   { href: "#contacto", label: "Contacto" },
 ];
 ---
 
 <header class="fixed top-0 inset-x-0 z-50 border-b border-border bg-bg/80 backdrop-blur">
+  <div
+    id="scroll-progress"
+    class="absolute left-0 top-full h-[2px] w-full origin-left scale-x-0 bg-accent-bright transition-transform duration-150 ease-out"
+  >
+  </div>
+
   <div class="mx-auto max-w-5xl px-6 flex items-center justify-between h-16">
     <a href="#top" class="font-display font-semibold text-lg tracking-tight text-text">
       OP<span class="text-accent-bright">.</span>
@@ -93,4 +101,29 @@ const links = [
 
     sections.forEach((section) => observer.observe(section));
   }
+</script>
+
+<script>
+  const progressBar = document.getElementById("scroll-progress");
+  let ticking = false;
+
+  const updateProgress = () => {
+    ticking = false;
+    if (!progressBar) return;
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+    progressBar.style.transform = `scaleX(${progress})`;
+  };
+
+  window.addEventListener(
+    "scroll",
+    () => {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(updateProgress);
+    },
+    { passive: true }
+  );
+  updateProgress();
 </script>
